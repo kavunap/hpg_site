@@ -1,0 +1,46 @@
+<header>
+  
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #e3f2fd;">
+  <%= link_to 'Home', root_url %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse " id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Products <span class="sr-only">(current)</span></a>
+      </li>
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Services
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#"><%= link_to 'Medical Discount', services_discount_path %></a>
+          <a class="dropdown-item" href="#"><%= link_to 'Shipping', services_shipping_path %></a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#"><%= link_to 'Motor Assurance<', services_motor_loan_path %>/a>
+        </div>
+      </li>
+
+    </ul>
+    <ul class='nav'>
+  
+  <li><%= link_to 'About Us', root_url %></li>
+  <li>Contact Us</li>
+  <% if logged_in? %>
+    <%= "Hello #{current_user.user_name}!" %>
+    <%= link_to 'Logout', session_path, method: :delete %>
+  <% else %>
+    <%= link_to 'Sign Up', new_user_path %>
+    <%= link_to 'Log In', new_session_path %>
+  <% end %>
+</ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+</header>
