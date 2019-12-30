@@ -15,8 +15,8 @@
  
 
   */
-  @import "bootstrap";
-  @import 'bootstrap-custom';
+  /* @import "bootstrap";
+  @import 'bootstrap-custom'; */
   body{
       margin-left: 5%;
       margin-right: 5%;
