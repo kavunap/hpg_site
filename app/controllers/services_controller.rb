@@ -7,4 +7,10 @@ class ServicesController < ApplicationController
 
   def motor_loan
   end
+
+  def products
+  end
+
+  def contact
+  end
 end

@@ -21,3 +21,16 @@
       margin-left: 5%;
       margin-right: 5%;
   }
+  .contact{
+      margin-left: 20%;
+      margin-right: 20%;
+  }
+  .contact-header{
+      background-color: grey;
+  }
+  .register{
+      background-image: url(img2.jpeg);
+  }
+  .login-form{
+      background-color: honeydew;
+  }

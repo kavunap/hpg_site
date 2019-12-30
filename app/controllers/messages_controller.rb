@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
-  before_action :authorize
+  before_action :authorize, only: [:index]
   # GET /messages
   def index
     @messages = Message.all
