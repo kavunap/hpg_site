@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :requests
   get 'services/discount'
   get 'services/contact'
   get 'services/products'
