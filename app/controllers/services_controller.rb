@@ -13,4 +13,6 @@ class ServicesController < ApplicationController
 
   def contact
   end
+  def services
+  end
 end

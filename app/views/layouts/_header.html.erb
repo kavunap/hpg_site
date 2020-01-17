@@ -3,31 +3,27 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #e3f2fd;">
   
 
+  <%= image_tag 'logo.PNG' %>
   <div class="collapse navbar-collapse " id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <%= link_to 'Products', services_products_path, class: 'btn btn-info' %> 
       </li>
       <li class="nav-item active">
-      <%= link_to 'Home', root_url, class: 'btn btn-info' %>
+      <%= link_to 'Home', home_url, class: 'btn btn-info' %>
       </li>
-      
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Services
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#"><%= link_to 'Medical Discount', services_discount_path, class: 'btn btn-info' %></a>
-          <a class="dropdown-item" href="#"><%= link_to 'Shipping', services_shipping_path,class: 'btn btn-info' %></a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#"><%= link_to 'Motor Assurance', services_motor_loan_path, class:'btn btn-info' %></a>
-        </div>
+      <li class="nav-item active">
+      <%= link_to 'Request card', new_request_url, class: 'btn btn-info' %>
+      </li>
+      <li class="nav-item active">
+      <%= link_to 'Message', new_message_url, class: 'btn btn-info' %>
       </li>
 
     </ul>
     <ul class='nav'>
   
   <li><%= link_to 'About Us', root_url, class: 'btn btn-info' %></li>
+  <li><%= link_to 'services', services_services_url, class: 'btn btn-info' %></li>
   <li><%= link_to 'Contact Us', services_contact_path, class: 'btn btn-info' %></li>
   <% if logged_in? %>
     <%= "Hello #{current_user.user_name}!" %>

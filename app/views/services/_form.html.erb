@@ -1,0 +1,23 @@
+<%= form_with(model: message, local: true) do |form| %>
+    
+    
+  
+    <div class="field">
+      <%= form.label :sender_names %>
+      <%= form.text_field :sender_names %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :sender_email %>
+      <%= form.text_field :sender_email %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :message %>
+      <%= form.text_area :message %>
+    </div>
+  
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+    <% end %>

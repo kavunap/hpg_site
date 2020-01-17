@@ -6,6 +6,8 @@ class RequestsController < ApplicationController
     @requests = Request.all
   end
 
+  def home
+  end
   # GET /requests/1
   def show
   end
