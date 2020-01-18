@@ -1,17 +1,17 @@
 
-<%= simple_form_for(@request, class: 'form-inline') do |f| %>
+<%= simple_form_for(@request) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :sender_name %>
-    <%= f.input :sender_phone %>
-    <%= f.input :sender_email %>
-    <%= f.input :sender_address %>
-    <%= f.input :card_name %>
+    <%= f.input :sender_name, class: 'form-group bg-info' %><br>
+    <%= f.input :sender_phone %><br>
+    <%= f.input :sender_email %><br>
+    <%= f.input :sender_address %><br>
+    <%= f.input :card_name %><br>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, 'Send Request' %>
   </div>
 <% end %>

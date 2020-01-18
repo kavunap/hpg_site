@@ -15,4 +15,10 @@ class ApplicationController < ActionController::Base
   def authorize
     redirect_to login_url, alert: "Not authorized" if current_user.nil?
     end
+  def check_user
+    unless current_user && current_user.user_type == 'admin'
+      redirect_to root_url, notice: 'You are not allowed to access this page'
+    end
+  end
+
 end

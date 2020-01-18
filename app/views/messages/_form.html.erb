@@ -1,4 +1,4 @@
-<%= form_with(model: message, local: true, class: 'form-inline') do |form| %>
+<%= form_with(model: message, local: true) do |form| %>
   <% if message.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being sent:</h2>
@@ -28,6 +28,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Send message' %>
   </div>
 <% end %>

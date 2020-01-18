@@ -1,5 +1,6 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
+  before_action :check_user, except: [:new, :create, :update, :edit, :home]
 
   # GET /requests
   def index

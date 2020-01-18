@@ -65,3 +65,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 gem 'rails-ujs', '~> 0.1.0'
+gem "paperclip"
+gem 'carrierwave'
+#gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'mini_magick'
