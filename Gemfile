@@ -69,3 +69,4 @@ gem "paperclip"
 gem 'carrierwave'
 #gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'mini_magick'
+gem 'ransack'

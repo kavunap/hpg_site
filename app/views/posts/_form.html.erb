@@ -7,7 +7,7 @@
     <%= f.input :title %>
     <%= f.input :content %>
     <%= f.file_field :image %>
-    <%= f.association :user %>
+    <%= f.association :user, value: current_user.id %>
   </div>
 
   <div class="form-actions">

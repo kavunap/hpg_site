@@ -8,10 +8,15 @@
         <%= image_tag post.image.url, height: '500px' %>
         <p><%= post.title %></p>
         <p><%= post.content %></p>
-     
+        <% if current_user && current_user.user_type == 'admin' %>
+        <p><%= link_to 'Show', post, class: 'btn btn-info' %>
+        <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-info' %>
+        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        <%= link_to 'New Post', new_post_path, class: 'btn btn-success' %></p>
+        <% end %>
     </div>
   </div>
   <% end %>
 </div>
 
-    <%= link_to 'New Post', new_post_path %>
+

@@ -3,7 +3,9 @@ class MessagesController < ApplicationController
   before_action :authorize, only: [:index]
   # GET /messages
   def index
-    @messages = Message.all
+    #@messages = Message.all
+    @q = Message.ransack(params[:q])
+    @messages = @q.result
   end
 
   def discount

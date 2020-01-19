@@ -37,6 +37,13 @@
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+    <% if false %>
+    <%= search_form_for @q, class: 'form-inline my-2 my-lg-0', remote: true do |f|  %>
+      <%= f.label :name_cont, 'Full Name', class: 'form-control mr-sm-2' %>
+      <%= f.search_field :name_cont, class: 'form-control mr-sm-2' %>
+      <%= f.submit 'Search', class: "btn btn-outline-success my-2 my-sm-0"  %>
+    <% end %>
+    <% end %>
   </div>
 </nav>
 </header>
