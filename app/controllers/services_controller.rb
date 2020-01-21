@@ -15,4 +15,7 @@ class ServicesController < ApplicationController
   end
   def services
   end
+
+  def responsive
+  end
 end

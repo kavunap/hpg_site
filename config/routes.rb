@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'services/contact'
   get 'services/products'
   get 'services/shipping'
+  get 'services/responsive'
   get 'services/motor_loan'
   resources :messages
   resource :session, only: %i[new create destroy]
