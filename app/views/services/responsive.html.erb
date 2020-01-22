@@ -9,22 +9,37 @@
 <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3" style="background-color: #e3f2fd;">
     <div class="container-fluid">
-        <a href="#" class="navbar-brand mr-3">Tutorial Republic</a>
+    <%= image_tag 'logo.PNG' %>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
-                <a href="#" class="nav-item nav-link active">Home</a>
-                <a href="#" class="nav-item nav-link">Services</a>
-                <a href="#" class="nav-item nav-link">About</a>
-                <a href="#" class="nav-item nav-link">Contact</a>
+                
+                <%= link_to 'services', services_services_url, class: 'nav-item nav-link active' %>
+                <%= link_to 'Products', services_products_path, class: 'nav-item nav-link' %>
+                <%= link_to 'About us', home_url, class: 'nav-item nav-link' %>
+                <% if logged_in? %>
+                <%= link_to 'Requests', requests_url, class: 'nav-item nav-link' %>
+                <%= link_to 'messages', messages_url, class: 'nav-item nav-link' %>
+                <% else %>
+                <%= link_to 'Request card', new_request_url, class: 'nav-item nav-link' %>
+                <%= link_to 'send message', new_message_url, class: 'nav-item nav-link' %>
+                <% end %>
+                <%= link_to 'Home', posts_url, class: 'navbar-brand mr-3' %>
+                <%= link_to 'Contact Us', services_contact_path, class: 'nav-item nav-link' %>
             </div>
             <div class="navbar-nav ml-auto">
-                <a href="#" class="nav-item nav-link">Register</a>
-                <a href="#" class="nav-item nav-link">Login</a>
+                
+                <% if logged_in? %>
+                    <%= "Hello #{current_user.user_name}!" %>
+                    <%= link_to 'Logout', session_path, method: :delete, class: 'nav-item nav-link' %>
+                <% else %>
+                    <%= link_to 'Register', new_user_path, class: 'nav-item nav-link' %>
+                    <%= link_to 'Log In', new_session_path, class: 'nav-item nav-link' %>
+                <% end %>
             </div>
         </div>
     </div>    

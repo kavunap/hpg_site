@@ -2,7 +2,7 @@
 
 <div class = "row">
 <% @posts.each do |post| %>
-  <div class = "col-sm-4">
+  <div class = "col-md-6 col-lg-4 col-xl-4">
     <div class = "card">
       <% if post.image.present? %>
         <%= image_tag post.image.url, height: '300px' %>
@@ -23,3 +23,5 @@
 <% if current_user && current_user.user_type == 'admin' %>
   <%= link_to 'New Post', new_post_path, class: 'btn btn-success' %>
 <% end %>
+
+

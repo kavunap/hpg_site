@@ -1,49 +1,38 @@
 <header>
   
-  <nav class="navbar navbar-expand-md navbar-light fixed-top mb-3" style="background-color: #e3f2fd;">
-  
- 
-  <%= image_tag 'logo.PNG' %>
-  <div class="collapse navbar-collapse " id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to 'Products', services_products_path, class: 'nav-item nav-link' %> 
-      </li>
-      <li class="nav-item active">
-      <%= link_to 'About us', home_url, class: 'nav-item nav-link' %>
-      </li>
-      <li class="nav-item active">
-      <%= link_to 'Request card', new_request_url, class: 'nav-item nav-link' %>
-      </li>
-      <li class="nav-item active">
-      <%= link_to 'Message', new_message_url, class: 'nav-item nav-link' %>
-      </li>
-
-    </ul>
-    <ul class='nav'>
-  
-  <li><%= link_to 'Home', posts_url, class: 'navbar-brand mr-3' %></li>
-  <li><%= link_to 'services', services_services_url, class: 'nav-item nav-link active' %></li>
-  <li><%= link_to 'Contact Us', services_contact_path, class: 'nav-item nav-link' %></li>
-  <% if logged_in? %>
-    <%= "Hello #{current_user.user_name}!" %>
-    <%= link_to 'Logout', session_path, method: :delete, class: 'nav-item nav-link' %>
-  <% else %>
-    <%= link_to 'Sign Up', new_user_path, class: 'nav-item nav-link' %>
-    <%= link_to 'Log In', new_session_path, class: 'nav-item nav-link' %>
-  <% end %>
-</ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    <% if false %>
-    <%= search_form_for @q, class: 'form-inline my-2 my-lg-0', remote: true do |f|  %>
-      <%= f.label :name_cont, 'Full Name', class: 'form-control mr-sm-2' %>
-      <%= f.search_field :name_cont, class: 'form-control mr-sm-2' %>
-      <%= f.submit 'Search', class: "btn btn-outline-success my-2 my-sm-0"  %>
-    <% end %>
-    <% end %>
-  </div>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3 fixed-top" style="background-color: #e3f2fd;">
+<div class="container-fluid">
+<%= image_tag 'logo.PNG' %>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav">
+            
+            <%= link_to 'services', services_services_url, class: 'nav-item nav-link active' %>
+            <%= link_to 'Products', services_products_path, class: 'nav-item nav-link' %>
+            <%= link_to 'About us', home_url, class: 'nav-item nav-link' %>
+            <% if logged_in? %>
+            <%= link_to 'Requests', requests_url, class: 'nav-item nav-link' %>
+            <%= link_to 'messages', messages_url, class: 'nav-item nav-link' %>
+            <% else %>
+            <%= link_to 'Request card', new_request_url, class: 'nav-item nav-link' %>
+            <%= link_to 'send message', new_message_url, class: 'nav-item nav-link' %>
+            <% end %>
+            <%= link_to 'Home', posts_url, class: 'navbar-brand mr-3' %>
+            <%= link_to 'Contact Us', services_contact_path, class: 'nav-item nav-link' %>
+        </div>
+        <div class="navbar-nav ml-auto">
+            
+            <% if logged_in? %>
+                <%= "Hello #{current_user.user_name}!" %>
+                <%= link_to 'Logout', session_path, method: :delete, class: 'nav-item nav-link' %>
+            <% else %>
+                <%= link_to 'Register', new_user_path, class: 'nav-item nav-link' %>
+                <%= link_to 'Log In', new_session_path, class: 'nav-item nav-link' %>
+            <% end %>
+        </div>
+    </div>
+</div>    
 </nav>
 </header>
