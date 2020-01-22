@@ -17,5 +17,6 @@ class ServicesController < ApplicationController
   end
 
   def responsive
+    @posts = Post.all
   end
 end
