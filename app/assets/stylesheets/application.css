@@ -81,3 +81,11 @@
   .services{
     margin: 10%;
 }
+
+.motor-requirement{
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-weight: 200;
+    background-color: hotpink;
+}
