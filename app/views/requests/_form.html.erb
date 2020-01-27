@@ -3,8 +3,8 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :sender_name, class: 'form-group bg-info' %><br>
+  <div class="form-group">
+    <%= f.input :sender_name, class: 'form-control' %><br>
     <%= f.input :sender_phone %><br>
     <%= f.input :sender_email %><br>
     <%= f.input :sender_address %><br>
