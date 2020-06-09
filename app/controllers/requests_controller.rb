@@ -56,6 +56,7 @@ class RequestsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def request_params
-      params.require(:request).permit(:sender_name, :sender_phone, :sender_email, :sender_address, :card_name)
+      params.require(:request).permit(:sender_name, :sender_phone, :sender_email, :sender_address, :card_name,
+      :NID, :category, :image, :image_cache, :status, :user_id)
     end
 end

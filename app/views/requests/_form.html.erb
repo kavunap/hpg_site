@@ -3,12 +3,19 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-group">
-    <%= f.input :sender_name, class: 'form-control' %><br>
-    <%= f.input :sender_phone %><br>
-    <%= f.input :sender_email %><br>
-    <%= f.input :sender_address %><br>
+  <div class="form-inline">
+    <%= f.input :sender_name, :label => "full names", class: 'form-control' %><br>
+    <%= f.input :sender_phone, :label => "Phone number" %><br>
+    <%= f.input :sender_email, :label => "Email" %><br>
+    <%= f.input :sender_address, :label => "Location" %><br>
     <%= f.input :card_name %><br>
+    <%= f.input :NID %><br><br>&emsp;
+    Category: <%= f.select :category, [30,60,70,80,90]%><br>&emsp;
+    Upload Image<%= f.file_field :image %><br>&emsp;
+    Select Status<%= f.select :status, options_for_select([
+      "UnPaid","paid","rejected","completed"]), 
+      {}, disabled: (true unless current_user && current_user.user_type == 'admin') %>&emsp;
+    <%= f.hidden_field :user_id, value: current_user.id %><br>
   </div>
 
   <div class="form-actions">
